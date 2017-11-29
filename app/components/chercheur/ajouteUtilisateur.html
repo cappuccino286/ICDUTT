@@ -1,0 +1,83 @@
+<div id="ajoute-utilisateur" style="max-width: 600px; margin:auto;"><br/><br/>
+    <h2 class="text-center">AJOUTE UTILISATEUR</h2><br/>
+    <form name="form" action="" method="POST" novalidate>
+        <div class="form-group">
+            <label for="nom">Nom: </label>
+            <input class="form-control" name="nom" ng-model="nom" type="text" required> 
+            <i class="fa fa-check fa-feedback text-success" ng-show="form.nom.$dirty && form.nom.$valid"></i>
+            <i class="fa fa-times fa-feedback text-danger" ng-show="form.nom.$dirty && form.nom.$invalid"></i>
+            <div ng-show="form.nom.$dirty && form.nom.$invalid" class="text-danger">
+                <b><span ng-show="form.nom.$error.required">Le nom doit être non vide</span></b>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="prenom">Prenom: </label>
+            <input class="form-control" name="prenom" ng-model="prenom" type="text" required> 
+            <i class="fa fa-check fa-feedback text-success" ng-show="form.prenom.$dirty && form.prenom.$valid"></i>
+            <i class="fa fa-times fa-feedback text-danger" ng-show="form.prenom.$dirty && form.prenom.$invalid"></i>
+            <div ng-show="form.prenom.$dirty && form.prenom.$invalid" class="text-danger">
+                <b><span ng-show="form.prenom.$error.required">Le prenom doit être non vide</span></b>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="username">Username: </label>
+            <input username-validator class="form-control" name="username" type="text" ng-model="username" ng-pattern="/^[a-zA-Z0-9_\.\-]+$/" required> 
+            <i class="fa fa-check fa-feedback text-success" ng-show="form.username.$dirty && form.username.$valid"></i>
+            <i class="fa fa-times fa-feedback text-danger" ng-show="form.username.$dirty && form.username.$invalid"></i>
+            <div ng-show="form.username.$dirty && form.username.$invalid" class="text-danger">
+                <b><span ng-show="form.username.$error.required">Le username doit être non vide</span>
+                    <span ng-show="form.username.$error.pattern">Le username ne contient que des lettres, des chiffres et des symboles _-.</span>
+                    <span ng-show="form.username.$error.userAvailable">Le username existe</span>
+                </b>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Mot de passe: </label>
+            <input class="form-control" name="password" type="password" ng-model="password" ng-minlength="6" ng-minlength="20" required> 
+            <i class="fa fa-check fa-feedback text-success" ng-show="form.password.$dirty && form.password.$valid"></i>
+            <i class="fa fa-times fa-feedback text-danger" ng-show="form.password.$dirty && form.password.$invalid"></i>
+            <div ng-show="form.password.$dirty && form.password.$invalid" class="text-danger">
+                <b><span ng-show="form.password.$error.required">Le mot de passe doit être non vide</span>
+                    <span ng-show="form.password.$error.minlength || form.password.$error.maxlength">Le mot de passe doit contenir entre 6 et 20 caractères
+                    </span>
+                </b>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="organisation">Organisation: </label>
+            <input class="form-control" name="organisation" ng-model="organisation" type="text" required> 
+            <i class="fa fa-check fa-feedback text-success" ng-show="form.organisation.$dirty && form.organisation.$valid"></i>  
+            <i class="fa fa-times fa-feedback text-danger" ng-show="form.organisation.$dirty && form.organisation.$invalid"></i>     
+            <div ng-show="form.organisation.$dirty && form.organisation.$invalid" class="text-danger">
+                <b><span ng-show="form.organisation.$error.required">L'organisation doit être non vide</span></b>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="equipe">Equipe de recherche: </label>
+            <select class="form-control" ng-model="equipe" name="equipe">
+                <option value="CREIDD" selected>CREIDD</option>
+                <option value="ERA">ERA</option>
+                <option value="GAMMA3">GAMMA3</option>
+                <option value="LASMIS">LASMIS</option>
+                <option value="LM2S">LM2S</option>
+                <option value="LNIO">LNIO</option>
+                <option value="LOSI">LOSI</option>
+                <option value="Tech-CICO">Tech-CICO</option>
+                <option value="Autre">Autre</option>
+            </select>
+            <i class="fa fa-check fa-feedback text-success" ng-show="form.equipe.$dirty && form.equipe.$valid"></i>
+        </div>
+        <div class="form-group" ng-show="equipe == 'Autre'">
+            <label for="equipeX">Saisir votre equipe: </label>
+            <input class="form-control" type="text" name="equipeX" ng-model="equipeX" placeholder="Saisir votre equipe" ng-required="equipe == 'Autre'">
+            <i class="fa fa-check fa-feedback text-success" ng-show="form.equipeX.$dirty && form.equipeX.$valid"></i>  
+            <i class="fa fa-times fa-feedback text-danger" ng-show="form.equipeX.$dirty && form.equipeX.$invalid"></i> 
+            <div ng-show="form.equipeX.$dirty && form.equipeX.$invalid" class="text-danger">
+                <b><span ng-show="form.equipeX.$error.required">L'equipe doit être non vide</span></b>
+            </div>    
+        </div>
+        <div class="form-group">
+            <input type="submit" name="submitUser" class="btn btn-primary form-control" value='Créer' ng-disabled="!form.$dirty || (form.$dirty && form.$invalid)">
+        </div>
+    </form>
+</div>

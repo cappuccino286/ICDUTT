@@ -1,0 +1,54 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-4" id="info-equipe">
+			<h2>Les équipes de recherche</h2>
+			<p>Le programme de recherche de l'Université de technologie de Troyes est exclusivement mis en œuvre au sein de l’Institut Charles Delaunay. L’ICD regroupe au sein de son programme de recherche 8 équipes projet disciplinaires réparties au sein de 3 départements :</p>
+		</div>
+		<div class="col-md-8 text-center"><br/>
+			<div class="row custom-row">
+				<div class="col-xs-3 col-sm-3 col-md-3">
+					<a href="http://lasmis.utt.fr/fr/index.html" target="_blank"><i class="fa fa-cog fa-5x" aria-hidden="true"></i></a>
+					<p>LASMIS</p>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3">
+					<a href="http://lnio.utt.fr/fr/index.html" target="_blank"><i class="fa fa-flask fa-5x" aria-hidden="true"></i></a>
+					<p>LNIO</p>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3">
+					<a href="http://lm2s.utt.fr/fr/index.html" target="_blank"><i class="fa fa-terminal fa-5x" aria-hidden="true"></i></a>
+					<p>LM2S</p>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3">
+					<a href="http://losi.utt.fr/fr/index.html" target="_blank"><i class="fa fa-clock-o fa-5x" aria-hidden="true"></i></a>
+					<p>LOSI</p>
+				</div>
+			</div>
+			<div class="row custom-row">
+				<div class="col-xs-3 col-sm-3 col-md-3">
+					<a href="http://techcico.utt.fr/fr/index.html" target="_blank"><i class="fa fa-comments-o fa-5x" aria-hidden="true"></i></a>
+					<p>Tech-CICO</p>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3">
+					<a href="http://creidd.utt.fr/fr/index.html" target="_blank"><i class="fa fa-leaf fa-5x" aria-hidden="true"></i></a>
+					<p>CREIDD</p>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3">
+					<a href="http://era.utt.fr/fr/index.html" target="_blank"><i class="fa fa-wifi fa-5x" aria-hidden="true"></i></a>
+					<p>ERA</p>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3">
+					<a href="http://gamma3.utt.fr/fr/index.html" target="_blank"><i class="fa fa-cloud fa-5x" aria-hidden="true"></i></a>
+					<p>GAMMA 3</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="scroll-down petit"><a class="direction" href="#publication"><i class="fa fa-arrow-down fa-2x" aria-hidden="true"></i></a></div>
+</div>
+<script>
+	$(".direction").on('click', function(event) {
+		event.preventDefault();
+		var hash = this.hash;
+		$('html, body').animate({scrollTop: $(hash).offset().top}, 1000);
+	});
+</script>

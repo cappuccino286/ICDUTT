@@ -1,0 +1,12 @@
+<div id="modifier-pub"><br/><br/>
+    <h2 class="text-center">MODIFIER PUB</h2>
+    <ol><li ng-repeat="x in pub|filter:nom">
+        <p><span ng-repeat="y in x.pub">
+                <span class="label label-success">{{y}}</span>
+            </span>
+        </p>
+        <p><a href="#updatePub/{{x.NoPub}}" data-toggle="modal" data-target="#information">{{x.Titre}}</a></p>
+        <p>{{x.Domaine}}</p>
+        <p>{{x.Editeur}}, {{x.Annee}}</p>
+    </li></ol>
+</div>

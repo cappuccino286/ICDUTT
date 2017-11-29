@@ -1,0 +1,70 @@
+<div id="ajoute-pub" style="max-width: 600px; margin:auto;"><br/><br/>
+    <h2 class="text-center">AJOUTE PUB</h2>
+    <form method="POST" action="" enctype="multipart/form-data">
+        <div class="form-group">
+            <input class="form-control" name="ID" type="hidden" value="{{pub.length+1}}"> 
+        </div>
+        <div class="form-group">
+            <label for="auteurs">Auteurs: </label>
+            <a onclick="them(this)"><i class="fa fa-plus-circle fa-2x text-info" aria-hidden="true"></i></a> 
+            <div class="row">
+                <div class="col-xs-8">
+                    <input class="form-control" name="auteurs[]" type="text" required>
+                </div>
+                <div class="col-xs-1">
+                    <a onclick="bot(this)"><i class="fa fa-times fa-2x text-danger"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="titre">Titre: </label>
+            <input class="form-control" name="titre" type="text" required> 
+        </div>
+        <div class="form-group">
+            <label for="domaine">In: </label>
+            <input class="form-control" name="domaine" type="text"> 
+        </div>
+        <div class="form-group">
+            <label for="editeur">Editeur: </label>
+            <input class="form-control" name="editeur" type="text"> 
+        </div>
+        <div class="form-group">
+            <label for="annee">Année: </label>
+            <input class="form-control" name="annee" type="text" required> 
+        </div>
+        <div class="form-group">
+            <label for="url">URL chez l'éditeur: </label>
+            <input class="form-control" name="url" type="text" > 
+        </div>
+        <div class="form-group" >
+            <label for="categorie">Catégorie: </label>
+            <select class="form-control" name="categorie">
+                <option value="RI">RI : Article dans des Revues Internationales </option>
+                <option value="CI">CI : Article dans des Conférences Internationales</option>
+                <option value="RF">RF : Article dans des Revues Françaises</option>
+                <option value="CF">CF : Article dans des Conférences Françaises</option>
+                <option value="OS">OS : Ouvrage Scientifique (Chapitre de Livre, ...)</option>
+                <option value="TD">TD : Thèse de Doctorat</option>
+                <option value="BV">BV : Brevet</option>
+                <option value="AP">AP : Autre Production</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="labo">Labo: </label><br/>
+            <label ng-repeat="lab in laboratoire" class="checkbox-inline">
+                <input type="checkbox" value="{{lab}}" name="labo[]">{{lab}}
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="resume">Résumé: </label>
+            <textarea class="form-control" name="resume"></textarea> 
+        </div>
+        <div class="form-group">
+            <label for="document">Document: </label>
+            <input type="file" name="fileUpload[]" multiple>
+        </div>
+        <div class="form-group">
+            <input type="submit" name="submitPUB" class="btn btn-primary form-control" value='Déposer'>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,8 @@
+<p><span ng-repeat="y in x.Auteur">
+        <button ng-click="changeAuteur(y)" class="btn btn-success btn-xs">{{y}}</button>
+    </span>
+</p>
+<p><a href="#infoPUB/{{x.NoPub}}" data-toggle="modal" data-target="#information">{{x.Titre}}</a></p>
+<p>{{x.Domaine}}</p>
+<p>{{x.Editeur}}, {{x.Annee}}</p>
+<!-- <div ng-view></div> -->

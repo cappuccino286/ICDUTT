@@ -1,0 +1,65 @@
+<form style="margin:auto;" method="POST" action="" enctype="multipart/form-data">
+    <input name="id" type="hidden" value="{{info.NoPub}}">
+    <div>
+        <label for="auteurs">Auteurs: </label> 
+        <a onclick="them(this)"><i class="fa fa-plus-circle fa-2x text-info" aria-hidden="true"></i></a> 
+        <div class="row" ng-repeat="x in info.Auteur">
+            <div class="col-xs-8">
+                <input class="form-control" name="auteurs[]" type="text" value="{{x}}">
+            </div>
+            <div class="col-xs-1">
+                <a onclick="bot(this)"><i class="fa fa-times fa-2x text-danger"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="flex-group">
+        <span class="title2">Titre: </span>
+        <input class="form-control" name="titre" type="text" required value='{{info.Titre}}'> 
+    </div>
+    <div class="flex-group">
+        <span class="title2">In: </span>
+        <input class="form-control" name="domaine" type="text" required value='{{info.Domaine}}'> 
+    </div>
+    <div class="flex-group">
+        <span class="title2">Editeur: </span>
+        <input class="form-control" name="editeur" type="text" required value='{{info.Editeur}}'> 
+    </div>
+    <div class="flex-group">
+        <span class="title2">Année: </span>
+        <input class="form-control" name="annee" type="text" required value='{{info.Annee}}'> 
+    </div>
+    <div class="flex-group">
+        <span class="title2">URL: </span>
+        <input class="form-control" name="url" type="text" value='{{info.Url}}' > 
+    </div>
+    <div class="flex-group" >
+        <span class="title2">Catégorie: </span>
+        <select class="form-control" name="categorie">
+            <option value="RI">RI : Article dans des Revues Internationales </option>
+            <option value="CI">CI : Article dans des Conférences Internationales</option>
+            <option value="RF">RF : Article dans des Revues Françaises</option>
+            <option value="CF">CF : Article dans des Conférences Françaises</option>
+            <option value="OS">OS : Ouvrage Scientifique (Chapitre de Livre, ...)</option>
+            <option value="TD">TD : Thèse de Doctorat</option>
+            <option value="BV">BV : Brevet</option>
+            <option value="AP">AP : Autre Production</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="labo">Labo: </label><br/>
+        <label ng-repeat="lab in laboratoire" class="checkbox-inline">
+            <input type="checkbox" value="{{lab}}" ng-checked="info.Labo.indexOf(lab)>-1" name="labo[]">{{lab}}
+        </label>
+    </div>
+    <div class="form-group">
+        <label for="resume">Résumé: </label>
+        <textarea class="form-control" name="resume" rows="5" required >{{info.Resume}}</textarea> 
+    </div>
+    <div class="form-group">
+        <label for="document">Document: </label> <a href="assets/documents/{{info.Document}}">{{info.Document}}</a>
+        <p>Ajoute des autres documents <input style="display: inline" type="file" name="fileUpload[]"></p>
+    </div>
+    <div class="form-group">
+        <input type="submit" name="updatePub" class="btn btn-primary form-control" value='Déposer'>
+    </div>
+</form>
